@@ -1,0 +1,49 @@
+<%- include('../partials/header') %>
+<h3 style="text-align:center">Enter a New Game</h3>
+
+<form action="/games" method="POST">
+    <div class="form-group">
+      <label>Title: </label>
+      <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title">
+    </div>
+      <div class="form-group">
+        <label>Release Date: </label>
+        <input type="date" name="releaseDate" class="form-control" id="exampleFormControlInput1">
+      </div>
+    <div class="form-group">
+      <label>No. Players:</label>
+      <select class="form-control" name="numPlayers">
+        <option selected>Choose...</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label>Genre: </label>
+        <input type="text" name="genre" class="form-control" placeholder="Enter Genre (separate with commas)">
+      </div>
+      <div class="form-group">
+        <label>Publisher: </label>
+        <input type="text" name="publisher" class="form-control"  placeholder="Enter Publisher">
+      </div>
+      <div class="form-group">
+        <label>Supported Language: </label>
+        <input type="text" name="supportedLanguage" class="form-control"  placeholder="Enter Language (separate with commas)">
+      </div>
+    <div class="form-group">
+      <label>Description:</label>
+      <textarea class="form-control"  rows="3", name="description"></textarea>
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input type="submit" class="form-control" value="Submit New Game">
+      </div>
+  </form>
+
+  <%- include('../partials/footer') %>
