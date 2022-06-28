@@ -1,7 +1,8 @@
 const Game = require('../models/game')
 module.exports = {
     create,
-    delete: deleteReview
+    delete: deleteReview,
+    edit,
   }
 
   function create(req, res) {
@@ -14,20 +15,6 @@ module.exports = {
 
   }
 
-//   async function deleteReview(req, res) {
-//     try{
-//         const game = await Game.findOne({'reviews._id' : req.params.id, 'reviews.user': req.user._id})
-//         // console.log(game)
-//         if (!game) return res.redirect('/games')
-//         game.reviews.remove(req.params.id)
-//         await game.save()
-//         res.redirect(`/games/${game._id}`)
-    
-//       }catch(err){
-//         return next(err)
-//       }
-//   }
-
 async function deleteReview(req, res) {
         const game =await Game.findOne({'reviews._id' : req.params.id})
         console.log(game)
@@ -37,4 +24,26 @@ async function deleteReview(req, res) {
         res.redirect(`/games/${game._id}`)
 
       }
+
+function edit(req, res) {
+  Game.findOne({'reviews._id': req.params.id}, function(err, game) {
+
+    const review = game.reviews.id(req.params.id);
+    console.log(review)
+    res.render('games/edit', {
+      title: 'Edit Game',
+      review
+    });
+  });
+}
   
+// async function edit(req, res) {
+
+//     const game =await Game.findOne({'reviews._id' : req.params.id})
+//     console.log(game.reviews)
+//     if (!game) return res.redirect('/games')
+//     res.render('games/edit', {
+//       title: 'Edit Game',
+//       review: game.reviews.id
+//     })
+//   }
