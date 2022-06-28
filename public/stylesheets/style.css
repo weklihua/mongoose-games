@@ -26,3 +26,9 @@ a {
 #show-page div:nth-child(even) {
   font-weight: bold;
 }
+.container {
+  padding: 10px;
+}
+.col-sm {
+  padding: 10px;
+}

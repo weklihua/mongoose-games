@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
+<!-- <section id="show-page">
     <div>Title: </div>
     <div><%= game.title %></div>
     <div>Release Date: </div>
@@ -14,9 +14,66 @@
     <div>Supported Language: </div>
     <div><%= game.supportedLanguage %></div>
     <div>Description: </div>
-    <div><%= game.description %></div>
+    <div><%= game.description %></div> -->
 
-
+    <div class="container">
+        <div class="row align-items-center">
+          <div class="col-sm">
+            Title:
+          </div>
+          <div class="col-sm">
+            <%= game.title %>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                Release Date:
+            </div>
+            <div class="col-sm">
+              <%= game.releaseDate.toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+                No. of Players:
+            </div>
+            <div class="col-sm">
+                <%= game.numPlayers %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+                Genre:
+            </div>
+            <div class="col-sm">
+                <%= game.genre %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+                Publisher:
+            </div>
+            <div class="col-sm">
+                <%= game.publisher %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+                Supported Language:
+            </div>
+            <div class="col-sm">
+                <%= game.supportedLanguage %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+                Description:
+            </div>
+            <div class="col-sm">
+                <%= game.description %>
+            </div>
+          </div>
+      </div>
 
 
 <%- include('../partials/footer') %>
