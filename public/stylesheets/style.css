@@ -58,3 +58,8 @@ a {
 .fiveStars {
   color: #f3cb06;
 }
+
+.toast.show {
+  margin:auto;
+  width:600px;
+}
