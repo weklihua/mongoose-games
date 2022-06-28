@@ -3,6 +3,7 @@ module.exports = {
     create,
     delete: deleteReview,
     edit,
+    update,
   }
 
   function create(req, res) {
@@ -47,3 +48,20 @@ function edit(req, res) {
 //       review: game.reviews.id
 //     })
 //   }
+
+function update(req, res) {
+  Game.findOne({'reviews._id': req.params.id}, function(err, game) {
+
+    const reviewSubdoc = game.reviews.id(req.params.id);
+    // Ensure that the review was created by the logged in user
+    // if (!reviewSubdoc.userId.equals(req.user._id)) return res.redirect(`/games/${game._id}`);
+    // Update the text of the review
+    reviewSubdoc.content = req.body.content
+    reviewSubdoc.rating = req.body.rating
+    // Save the updated game
+    game.save(function(err) {
+      // Redirect back to the game's show view
+      res.redirect(`/games/${game._id}`);
+    });
+  });
+}
