@@ -78,6 +78,7 @@
         <!-- add reviews -->
 
           <br><br><h2 style="text-align:center">Reviews</h2>
+
           <% if (game.reviews.length) { %>
             <% game.reviews.forEach(function(review) { %>
               <div class="row" >
@@ -87,8 +88,9 @@
                   <div class="toast-header">
                     <!-- <img src="..." class="rounded me-2" alt="..."> -->
 
-                    <strong class="me-auto">Rating: <%= review.rating %>
-                    </strong>
+                    <strong class="me-auto" class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" style="border-radius:50%; height: 40px">&nbsp<%= review.userName %></strong>
+                    
+                    <strong class="me-auto">Rating: <%= review.rating %></strong>
                     <small><%= game.createdAt.toLocaleDateString()%>&nbsp&nbsp</small>
                     <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
                   </div>
@@ -114,8 +116,11 @@
               <% } %>
 
           <!-- add review form -->
+          
           <div class="row">
             <div class="col-sm">
+              <!-- <% if (user) { %> -->
+
               <br><br><h2 style="text-align:center">Add a Review</h2>
               <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
 
@@ -134,6 +139,7 @@
                 <div>  <input type="submit" value="Add Review">
                 </div>
               </form>
+              <!-- <% } %> -->
 
             </div>
             
