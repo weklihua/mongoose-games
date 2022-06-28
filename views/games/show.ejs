@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Title: </div>
+    <div><%= game.title %></div>
+    <div>Release Date: </div>
+    <div><%= game.releaseDate.toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2') %></div>
+    <div>No. of Players: </div>
+    <div><%= game.numPlayers %></div>
+    <div>Genre: </div>
+    <div><%= game.genre %></div>
+    <div>Publisher: </div>
+    <div><%= game.publisher %></div>
+    <div>Supported Language: </div>
+    <div><%= game.supportedLanguage %></div>
+    <div>Description: </div>
+    <div><%= game.description %></div>
+
+
+
+
+<%- include('../partials/footer') %>

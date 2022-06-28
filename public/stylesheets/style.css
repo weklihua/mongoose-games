@@ -1,6 +1,7 @@
 body {
   padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 a {
@@ -15,3 +16,13 @@ a {
 .login img {
   height: 30px;
 } */
+
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#show-page div:nth-child(even) {
+  font-weight: bold;
+}

@@ -6,15 +6,16 @@
         <th>Title</th>
         <th>Release Date</th>
         <th>Genre</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
       <% games.forEach(function(game) { %>
         <tr>
           <td><%= game.title %></td>
-          <td><%= game.releaseDate %></td>
+          <td><%= game.releaseDate.toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2') %></td>
           <td><%= game.genre %></td>
-          <!-- <td><a href="/movies/<%= game._id %>">DETAILS</a></td> -->
+          <td><a href="/games/<%= game._id %>">DETAILS</a></td>
         </tr>
         <% }); %>
       </tbody>

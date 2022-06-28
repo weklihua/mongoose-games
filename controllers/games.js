@@ -5,6 +5,7 @@ module.exports = {
     new: newGame,
     create,
     index,
+    show,
 }
 
 function index(req, res) {
@@ -17,12 +18,13 @@ function index(req, res) {
 }
 
 function newGame(req, res) {
-    res.render('games/new')
+    res.render('games/new', {
+        title: 'Add a Game'
+    })
 
 }
 
 function create(req, res) {
-    console.log(req.body)
     req.body.genre = req.body.genre.trim()
     if (req.body.genre) req.body.genre = req.body.genre.split(/\s*,\s*/)
 
@@ -32,7 +34,16 @@ function create(req, res) {
     game.save(function(err) {
         if (err) return res.redirect('/games/new')
         console.log(game)
-        res.redirect('/games/new')
+        res.redirect('/games')
 
+    })
+}
+
+function show(req, res) {
+    Game.findById(req.params.id, function(err, game){
+        res.render('games/show', {
+            title: 'Game Details',
+            game
+        })
     })
 }
