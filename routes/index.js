@@ -6,6 +6,7 @@ const indexCtrl = require('../controllers/index');
 
 /* GET home page. */
 router.get('/', indexCtrl.index);
+// router.get('/:id', indexCtrl.show)
 
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -18,8 +19,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/games',
-    failureRedirect: '/games'
+    successRedirect: '/',
+    failureRedirect: '/'
   }
 ))
 
@@ -27,7 +28,7 @@ router.get('/oauth2callback', passport.authenticate(
 router.get('/logout', function(req, res){
   req.logout(function(err) {
     if (err) console.log(err)
-    res.redirect('/games')
+    res.redirect('/')
   });
 });
 

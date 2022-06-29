@@ -46,3 +46,7 @@ a {
 div.card {
   padding-left: 5%;
 }
+.card.h-100 {
+  padding:initial;
+  border-radius: 10%;
+}
