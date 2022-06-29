@@ -26,6 +26,7 @@ function newGame(req, res) {
 
 function create(req, res) {
     req.body.genre = req.body.genre.trim()
+    // req.body.releaseDate = req.body.releaseDate.toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2')
     if (req.body.genre) req.body.genre = req.body.genre.split(/\s*,\s*/)
 
     req.body.supportedLanguage = req.body.supportedLanguage.trim()
@@ -42,7 +43,7 @@ function create(req, res) {
 function show(req, res) {
     Game.findById(req.params.id, function(err, game){
         res.render('games/show', {
-            title: game.title,
+            title: null,
             game
         })
     })
