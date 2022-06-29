@@ -66,3 +66,6 @@ a {
 #review-botton {
   text-align: right;
 }
+div.card {
+  padding-left: 20%;
+}
