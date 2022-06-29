@@ -9,7 +9,9 @@ module.exports = {
 }
 
 function index(req, res) {
-    Game.find({}, function(err, games){
+    Game.find({},function(err, games){
+        console.log(games)
+        // games = games.sort('-createdAt')
         res.render('games/index', {
             title: 'All Games',
             games
