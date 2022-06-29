@@ -10,17 +10,18 @@ const Game = require('./models/game');
 const data = require('./data');
 
 
-// Just a query object as an arg, no callback!
-Movie.deleteMany({})
-// The cb provided to the .then does not use the error-first signature
-// use .catch instead to deal with errors
+// Save the promises (or call right in the array if feeling frisky)
+const p1 = Game.deleteMany({});
+// Promise.all will return a single promise that resolves
+// only after all of the array's promises resolve
+Promise.all([p1])
 .then(function(results) {
-  // results will be whatever the promise
-  // returned by the deleteMany method resolves to
   console.log(results);
-  // process.exit() immediately exits a Node program
-  process.exit();
-});
+  return Game.create(data.games);
+
+})
+// Yes we can!
+.then(process.exit);
 
 
 
