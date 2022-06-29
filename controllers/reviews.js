@@ -20,15 +20,37 @@ module.exports = {
 
   }
 
-async function deleteReview(req, res) {
-        const game =await Game.findOne({'reviews._id' : req.params.id})
-        console.log(game)
-        if (!game) return res.redirect('/games')
-        game.reviews.remove(req.params.id)
-        game.save()
-        res.redirect(`/games/${game._id}`)
+  // controllers/reviews.js
 
-      }
+// Include the next parameter - used for error handling in the catch
+function deleteReview(req, res, next) {
+  // Note the cool "dot" syntax to query on the property of a subdoc
+  Game.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id}).then(function(game) {
+    // Rogue user!
+    if (!game) return res.redirect('/games');
+    // Remove the review using the remove method available on Mongoose arrays
+    game.reviews.remove(req.params.id);
+    // Save the updated game
+    game.save().then(function() {
+      // Redirect back to the game's show view
+      res.redirect(`/games/${game._id}`);
+    }).catch(function(err) {
+      // Let Express display an error
+      return next(err);
+      // res.redirect(`/games/${game._id}`);
+    });
+  });
+}
+
+// async function deleteReview(req, res, next) {
+//         const game =await Game.findOne({'reviews._id' : req.params.id})
+//         // console.log(game)
+//         if (!game) return res.redirect('/games')
+//         game.reviews.remove(req.params.id)
+//         game.save()
+//         res.redirect(`/games/${game._id}`)
+
+//       }
 
 function edit(req, res) {
   Game.findOne({'reviews._id': req.params.id}, function(err, game) {
