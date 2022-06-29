@@ -8,16 +8,26 @@ module.exports = {
     show,
 }
 
-function index(req, res) {
-    Game.find({},function(err, games){
-        console.log(games)
-        // games = games.sort('-createdAt')
+function index(req, res, next) {
+    Game.find({}).sort('-updatedAt')
+        .exec(function(err, games){
         res.render('games/index', {
             title: 'All Games',
             games
         })
     })
 }
+
+// function index(req, res) {
+//     Game.find({},function(err, games){
+//         console.log(games)
+//         // games = games.sort('-createdAt')
+//         res.render('games/index', {
+//             title: 'All Games',
+//             games
+//         })
+//     })
+// }
 
 function newGame(req, res) {
     res.render('games/new', {
