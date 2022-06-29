@@ -1,10 +1,10 @@
 .container {
   background-color: rgba(173, 216, 230, 0.335);
-  
+  padding: 10px;
   border-radius:2%;
 }
 body {
-  padding: 30px;
+  padding: 20px;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   background-color: lightcyan
 }
@@ -31,38 +31,10 @@ a {
 #show-page div:nth-child(even) {
   font-weight: bold;
 }
-.container {
-  padding: 10px;
-}
+
 .col-sm {
   padding: 10px;
 }
-
-
-/* .rate-popover {
-  color: #c4c4c4;
-}
-
-.oneStar {
-  color: #3d381c;
-}
-
-.twoStars {
-  color: #6d6126;
-}
-
-.threeStars {
-
-  color: #c2aa36;
-}
-
-.fourStars {
-  color: #e2c327;
-}
-
-.fiveStars {
-  color: #f3cb06;
-} */
 
 .toast.show {
   margin:auto;
