@@ -96,9 +96,9 @@
                   </div>
                   <div class="toast-body">
                     <%= review.content %>
-                    <div class="mt-2 pt-2 border-top">
+                    <div class="mt-2 pt-2 border-top" id="review-botton">
 
-                      <button type="button" class="btn btn-info btn-sm"><a href="/reviews/<%=review.id %>/edit">EDIT</a></button> 
+                      <button type="button" class="btn btn-info btn-sm" ><a href="/reviews/<%=review.id %>/edit">EDIT</a></button> 
 
                       <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST" style="display: inline-block">
                       <button type="submit" class="btn btn-danger btn-sm" data-bs-dismiss="toast">DELETE</button>
