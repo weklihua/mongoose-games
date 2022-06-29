@@ -7,6 +7,7 @@ module.exports = {
   }
 
   function create(req, res) {
+    console.log(req.body)
     Game.findById(req.params.id, function(err, game){
       req.body.user = req.user._id;
       req.body.userName = req.user.name;
