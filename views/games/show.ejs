@@ -76,7 +76,7 @@
           <% if (game.reviews.length) { %>
             <% let total = 0 %>
 
-            <% game.reviews.forEach(function(review) { %>
+            <% game.reviews.sort((a, b)=> b.updatedAt - a.updatedAt).forEach(function(review) { %>
               <% total += review.rating %>
 
               <div class="row" >
