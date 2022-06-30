@@ -38,7 +38,9 @@ function newGame(req, res) {
 
 function create(req, res) {
     req.body.genre = req.body.genre.trim()
-    // req.body.releaseDate = req.body.releaseDate.toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2')
+
+    // req.body.releaseDate = req.body.releaseDate.setDay(req.body.releaseDate.getDay() + 1)
+
     if (req.body.genre) req.body.genre = req.body.genre.split(/\s*,\s*/)
 
     req.body.supportedLanguage = req.body.supportedLanguage.trim()
@@ -46,7 +48,7 @@ function create(req, res) {
     const game = new Game(req.body)
     game.save(function(err) {
         if (err) return res.redirect('/games/new')
-        console.log(game)
+        // console.log(game)
         res.redirect('/games')
 
     })
