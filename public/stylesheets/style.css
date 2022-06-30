@@ -1,8 +1,15 @@
+
 .container {
-  background-color: rgba(173, 216, 230, 0.335);
+  /* background-color: rgba(173, 216, 230, 0.335); */
   padding: 10px;
   border-radius:2%;
 }
+
+.container-fluid {
+  background-color: rgba(173, 216, 230, 0.335);
+  padding: 0px;
+}
+
 body {
   padding: 20px;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
