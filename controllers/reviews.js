@@ -58,7 +58,7 @@ function update(req, res) {
 
     const reviewSubdoc = game.reviews.id(req.params.id);
     // Ensure that the review was created by the logged in user
-    if (!reviewSubdoc.userId.equals(req.user._id)) return res.redirect(`/games/${game._id}`);
+    // if (!reviewSubdoc.userId.equals(req.user._id)) return res.redirect(`/games/${game._id}`);
     // Update the text of the review
     reviewSubdoc.content = req.body.content
     reviewSubdoc.rating = req.body.rating
