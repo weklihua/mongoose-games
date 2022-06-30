@@ -13,7 +13,6 @@ const reviewSchema = new Schema({
   });
   
   
-
 const gameSchema = new Schema({
     title: {
         type: String,

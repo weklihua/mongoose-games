@@ -4,13 +4,15 @@
       <h1 style="text-align:center"><%= game.title %></h1>
       <div class="card" style="width: 100%;">
         <div class="card-body">
-        
+
+        <!-- game details -->
+
           <div class="row">
             <div class="col-sm" >
                 Release Date:
             </div>
             <div class="col-sm">
-              <%= game.releaseDate.toLocaleString('en-us', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2') %>
+              <%= game.releaseDate.toLocaleDateString() %>
             </div>
           </div>
           <div class="row">
@@ -78,13 +80,10 @@
 
               <div class="row" >
                 <div class="col-sm">
-
                 <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                   <div class="toast-header">
                     <!-- <img src="..." class="rounded me-2" alt="..."> -->
-
-                    <strong class="me-auto" class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" style="border-radius:50%; height: 40px">&nbsp<%= review.userName %></strong>
-                    
+                    <strong class="me-auto" class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" style="border-radius:50%; height: 40px">&nbsp<%= review.userName %></strong> 
                     <strong class="me-auto">Rating: <%= review.rating %></strong>
                     <small><%= game.createdAt.toLocaleDateString()%>&nbsp&nbsp</small>
                   </div>

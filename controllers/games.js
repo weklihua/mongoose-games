@@ -28,7 +28,8 @@ function newGame(req, res) {
 function create(req, res) {
     req.body.genre = req.body.genre.trim()
 
-    // req.body.releaseDate = req.body.releaseDate.setDay(req.body.releaseDate.getDay() + 1)
+    const dt = req.body.releaseDate
+    req.body.releaseDate = `${dt.substr(5, 2)}-${dt.substr(8, 2)}-${dt.substr(0, 4)}`;
 
     if (req.body.genre) req.body.genre = req.body.genre.split(/\s*,\s*/)
 
