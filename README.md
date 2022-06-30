@@ -23,3 +23,11 @@ Link to Nintendo Spot: https://mongoose-games.herokuapp.com/
 <li>Add image to the schema.</li>
 </ol>
 
+## Project's Planning
+<ol>
+<li>Trello: https://trello.com/invite/b/tnj0d2u1/c8fcde333a3ea3d2a2ae0bb962f12398/project-2</li>
+<li>ERD: <br>
+<img width="613" alt="Screen Shot 2022-06-30 at 4 12 54 PM" src="https://user-images.githubusercontent.com/105599499/176793724-d81b534c-c3f7-4cdf-8afd-116533d4a96e.png">
+
+</li>
+</ol>
