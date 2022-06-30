@@ -15,6 +15,7 @@ Nintendo Spot is a gaming site that users can view, add, and review video games.
 Express, MongoDB, Mongoose, Node.js, CSS, HTML, Bootstrap, OAuth Authentication & Authorization
 
 ## Getting Started
+Link to Nintendo Spot: https://mongoose-games.herokuapp.com/
 
 ## Next Steps
 <ol>
