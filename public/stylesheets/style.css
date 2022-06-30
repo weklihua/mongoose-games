@@ -59,6 +59,8 @@ div.card {
 }
 img.card-img-top {
   border-radius: inherit;
+  width: 50%;
+  height: 50%;
 
 
 }
