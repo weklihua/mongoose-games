@@ -63,3 +63,6 @@ img.card-img-top {
 
 
 }
+div.col-sm.label {
+  text-decoration: underline;
+}
