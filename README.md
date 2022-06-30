@@ -12,7 +12,7 @@ Nintendo Spot is a gaming site that users can view, add, and review video games.
 <img width="889" alt="Screen Shot 2022-06-29 at 10 15 09 PM" src="https://user-images.githubusercontent.com/105599499/176598051-409c98c9-5066-4a73-9539-dbe06fbb6bf9.png">
 
 ## Technologies Used
-Express, MongoDB, Mongoose, node.js, Javascript, CSS, HTML, Bootstrap, OAuth Authentication & Authorization
+Express, MongoDB, Mongoose, Node.js, CSS, HTML, Bootstrap, OAuth Authentication & Authorization
 
 ## Getting Started
 
