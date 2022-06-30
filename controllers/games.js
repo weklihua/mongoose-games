@@ -1,4 +1,3 @@
-// const game = require('../models/game')
 const Game = require('../models/game')
 
 module.exports = {
@@ -18,16 +17,6 @@ function index(req, res, next) {
     })
 }
 
-// function index(req, res) {
-//     Game.find({},function(err, games){
-//         console.log(games)
-//         // games = games.sort('-createdAt')
-//         res.render('games/index', {
-//             title: 'All Games',
-//             games
-//         })
-//     })
-// }
 
 function newGame(req, res) {
     res.render('games/new', {

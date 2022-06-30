@@ -4,8 +4,7 @@
       <h1 style="text-align:center"><%= game.title %></h1>
       <div class="card" style="width: 100%;">
         <div class="card-body">
-          <!-- <h5 class="card-title"><%= game.title %></h5> -->
-          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        
           <div class="row">
             <div class="col-sm" >
                 Release Date:
@@ -90,7 +89,6 @@
                     
                     <strong class="me-auto">Rating: <%= review.rating %></strong>
                     <small><%= game.createdAt.toLocaleDateString()%>&nbsp&nbsp</small>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
                   </div>
                   <div class="toast-body">
                     
@@ -124,7 +122,7 @@
           
           <div class="row">
             <div class="col-sm">
-              <!-- <% if (user) { %> -->
+              <% if (user) { %> 
 
               <br><br><h2 style="text-align:center">Add a Review</h2>
               <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
@@ -144,7 +142,7 @@
                 <div>  <input type="submit" value="Add Review">
                 </div>
               </form>
-              <!-- <% } %> -->
+              <% } %> 
 
             </div>
             
