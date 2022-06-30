@@ -58,7 +58,7 @@
                   Description:
               </div>
               <div class="col-sm">
-                  <%= game.description %>
+                <%-`${game.description.replaceAll('\r\n', '<br>')}` %>
               </div>
             </div>
 
@@ -82,7 +82,6 @@
                 <div class="col-sm">
                 <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                   <div class="toast-header">
-                    <!-- <img src="..." class="rounded me-2" alt="..."> -->
                     <strong class="me-auto" class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" style="border-radius:50%; height: 40px">&nbsp<%= review.userName %></strong> 
                     <strong class="me-auto">Rating: <%= review.rating %></strong>
                     <small><%= game.createdAt.toLocaleDateString()%>&nbsp&nbsp</small>
